@@ -15,9 +15,15 @@ function getWorkingHours(empCheck) {
     }
 }
 
-let empHrs = 0;
-let empCheck = Math.floor(Math.random() * 10) % 3;  
-empHrs = getWorkingHours(empCheck);
+const NumOfWorkingDays=2;
 
-let empWage = empHrs * WAGE_PER_HOURS;
-console.log("Emp wage: " + empWage);
+let empHrs=0;
+for(let day=0; day<NumOfWorkingDays;day++){
+    let empCheck=Math.floor(Math.random()*10)%3;
+    empHrs+=getWorkingHours(empCheck)
+    
+}
+
+let empWage=empHrs*WAGE_PER_HOURS;
+
+console.log("Total Hrs:",empHrs,"Emp wage:",empWage)
